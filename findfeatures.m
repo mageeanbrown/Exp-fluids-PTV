@@ -112,7 +112,7 @@ function arr = findfeatures(image, extent, varargin)
 % Set default values for optional parameters
 default_sep = extent+1;
 default_masscut = [];
-default_minpix = [];
+default_minpix = [150];
 default_quiet = [];
 default_iterate = [];
 

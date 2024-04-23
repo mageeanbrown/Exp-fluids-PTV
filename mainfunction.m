@@ -87,6 +87,8 @@ plot(pt_all(:,4),pt_all(:,5),'.'); %drawnow
 xlabel('Size')
 ylabel('Eccentricity')
 
+%%Everything below this is still a WPI
+
 % %%
 % w=find(pt_all(:,5) > 0.1); % index of particles with an eccentricity > 0.01 to check for non-cicular particles
 % fo=fover2d(a(:,:,1:100),pt_all(w,:),circle='y',radius=40,big='y'); % Make a movie of those particles 
@@ -101,7 +103,7 @@ histogram(mod(pt(:,1:2),1),20); drawnow
 
 %%
 
-t=track(pt_all,6,dim=2,memory=3,goodenough=10);
+t=track(pt_all,6,dim=2,memory=2,goodenough=10);
 
 figure(6)
 plottr(t);
@@ -114,3 +116,8 @@ m=msd(t);
 
 figure(10)
 res=linearfit(m(:,1),m(:,6));
+
+%% plotting msd vs time
+
+figure()
+plot(m(1,:), m(6,:))
